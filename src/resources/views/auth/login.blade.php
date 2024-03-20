@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('main')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -54,10 +54,6 @@
                         </div>
                     </form>
                 </div>
-            </div>
-            <div class="mt-3 text-center">
-                <p class="transition-txt">アカウントをお持ちでない方はこちらから</p>
-                <a class="transition-link" href="{{ route('register') }}">会員登録</a>
             </div>
         </div>
     </div>
