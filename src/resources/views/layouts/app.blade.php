@@ -12,13 +12,17 @@
 </head>
 
 <body class="container">
-    @component('components.header')
-    @endcomponent
+    <div class="header">
+        <div class="menu-icon">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <h1>Rese</h1>
+    </div>
     <main class="main">
         @yield('main')
     </main>
-    @component('components.footer')
-    @endcomponent
 
     <ul class="header-nav">
         @if (Auth::check())
