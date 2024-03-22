@@ -13,7 +13,7 @@ body {
 .header h1 {
     margin-left: 20px;
     font-size: 2em;
-    color: #3490dc;
+    color: blue;
 }
 
 .menu-icon {
@@ -24,7 +24,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     padding: 15px;
-    background-color: #3490dc;
+    background-color: blue;
     border-radius: 5px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
