@@ -51,6 +51,7 @@ body {
     border-radius: 0;
     font-size: 14px;
     padding-left: 30px;
+    text-align: left;
 }
 
 .form-group:last-child input {

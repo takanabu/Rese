@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @stack('styles') 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var isLoggedIn = @json(Auth::check());
+    </script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
@@ -24,20 +28,6 @@
     <main class="main">
         @yield('main')
     </main>
-
-    <ul class="header-nav">
-        @if (Auth::check())
-        <li class="header-nav__item">
-            <a class="header-nav__link" href="/mypage">マイページ</a>
-        </li>
-        <li class="header-nav__item">
-            <form action="{{ route('logout') }}" method="post">
-                @csrf
-                <button class="header-nav__button">ログアウト</button>
-            </form>
-        </li>
-        @endif
-    </ul>
 </body>
 
 </html>
