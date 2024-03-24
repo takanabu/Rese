@@ -90,7 +90,7 @@ body {
     margin-right: 5px;
 }
 
-.username-icon::before {
+.name-icon::before {
     content: "";
     display: inline-block;
     width: 25px;
