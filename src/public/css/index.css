@@ -10,74 +10,77 @@ body {
 .card-img-top {
     width: 100%;
     height: 140px;
-    /* ここで写真の高さを設定します。適切な値に変更してください。 */
     object-fit: cover;
-    /* これにより、画像は指定した高さに合わせてトリミングされます。 */
     border-top-left-radius: 10px;
-    /* 左上の角を丸くします */
     border-top-right-radius: 10px;
-    /* 右上の角を丸くします */
 }
 
 .card-body {
+    position: relative;
     width: 100%;
     height: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* これにより、要素間に均等なスペースが確保されます。 */
     padding: 10px;
-    /* これにより、各文字の上下左右に隙間が空きます。 */
 }
 
 .card {
     background-color: white;
     box-sizing: border-box;
-    /* ボーダーとパディングを要素の幅・高さに含める */
     border-radius: 10px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     margin: 10px;
-    /* 上下左右のマージンを設定 */
 }
 
 .row {
     display: flex;
-    /* 子要素をフレックスアイテムとして扱う */
     flex-wrap: wrap;
-    /* 必要に応じて折り返す */
 }
 
 .col-md-3 {
     width: 25%;
-    /* 一行に4つ表示するための幅を設定 */
 }
 
 .container {
     margin-left: auto;
     margin-right: auto;
     max-width: 96%;
-    /* または希望する最大幅 */
     margin-top: 20px;
 }
 
 .btn-outline-secondary {
     color: #fff;
-    /* 文字色を白に設定 */
     background-color: #007bff;
-    /* 背景色を青に設定 */
     border: none;
-    /* 周りの線を無しに設定 */
     border-radius: 8px;
-        /* ボタンの4つの角を丸くします */
-        font-size: 0.8rem;
-        /* 文字を少し小さくします */
-        padding: 6px 15px;
-        /* ボタンの周りの隙間を広くします */
-        margin: 5px 0px
+    font-size: 0.8rem;
+    padding: 6px 15px;
+    margin: 5px 0px;
 }
 
 .text-muted {
     font-size: 0.6rem;
-    /* 文字を少し小さくします */
     font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.heart-icon {
+    width: 20px;
+    height: auto;
+    position: absolute;
+    bottom: 20px;
+    right: 40px;
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+.btn.btn-sm.btn-outline-secondary {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
 }
