@@ -27,5 +27,6 @@
         <main class="main">
             @yield('main')
         </main>
+        @stack('scripts')
     </body>
 </html>

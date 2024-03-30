@@ -9,7 +9,6 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -45,5 +44,25 @@ class UserController extends Controller
         Auth::login($user);
 
         return redirect()->route('thanks');
+    }
+
+    public function favorite(Request $request, $id)
+    {
+        $user = Auth::user();
+        $isFavorite = $user->favorites()->where('shop_id', $id)->count();
+
+        if ($isFavorite == 0) {
+            $user->favorites()->attach($id);
+        }
+
+        return redirect()->back();
+    }
+
+    public function unfavorite(Request $request, $id)
+    {
+        $user = Auth::user();
+        $user->favorites()->detach($id);
+
+        return redirect()->back();
     }
 }

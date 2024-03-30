@@ -18,4 +18,9 @@ class Shop extends Model
         'shop_overview',
         'image_url',
     ];
+
+
+    public function favorites() {
+    return $this->hasMany(Favorite::class);
+}
 }

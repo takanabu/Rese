@@ -10,7 +10,7 @@ class ShopsTableSeeder extends Seeder
 {
     public function run()
     {
-        $file = new SplFileObject(storage_path('app/shop.data.csv'));
+        $file = new SplFileObject(storage_path('seeders/shop.data.csv'));
         $file->setFlags(SplFileObject::READ_CSV);
         foreach ($file as $row) {
             if (!is_null($row[0])) {

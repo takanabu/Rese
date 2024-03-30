@@ -27,3 +27,8 @@ Route::get('/menu/login', function () {
 Route::get('/thanks', function () {
     return view('register_thanks');
 })->name('register_thanks');
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/shops/{shop:slug}/favorite', [UserController::class, 'favorite'])->name('favorite');
+    Route::delete('/shops/{shop:slug}/favorite', [UserController::class, 'unfavorite'])->name('unfavorite');
+});
