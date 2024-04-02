@@ -6,6 +6,10 @@ use App\Http\Controllers\UserController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);
+    Route::get('/shops/region/{region?}', [ShopController::class, 'region'])->name('shops.region');
+    Route::get('/shops/genre/{genre?}', [ShopController::class, 'genre'])->name('shops.genre');
+    Route::get('/shops/search', [ShopController::class, 'search'])->name('shops.search');
+    Route::get('/shops/all', [ShopController::class, 'all'])->name('shops.all');
 });
 
 Route::get('/login', function () {
