@@ -16,7 +16,7 @@ body {
     margin-left: 20px;
     font-size: 2em;
     color: blue;
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 .menu-icon {
@@ -31,7 +31,7 @@ body {
     border-radius: 5px;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     margin-left: 30px;
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 .menu-icon div {
@@ -51,11 +51,16 @@ body {
     width: 30%;
 }
 
-.shop-image {
-    width: 50%;
+
+
+.shop-image img {
+    width: 80%;
     height: auto;
-    margin-left: 40px;
-    /* アイコンと同じ余白に */
+
+    
+            margin-left: 40px;
+            /* アイコンと同じ余白に */
+        
 }
 
 .shop-name {
@@ -81,7 +86,7 @@ body {
         margin-bottom: 20px;
         /* 段落の下に隙間を作る */
         margin-top: 20px;
-        width: 50%;
+        width: 80%;
             /* 画面の半分で折り返す */
 }
 
@@ -91,21 +96,21 @@ body {
         margin-bottom: 20px;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.shop-detail {
-    flex: 1;
-    margin-right: 20px;
-}
 
 form {
     flex: 1;
-    background-color: #007BFF;
+    background-color: rgb(64, 64, 244);
     padding: 20px;
     color: white;
+    margin-right: 40px;
+    margin-top: -50px;
+    height: 100%;
+    /* または任意の値（例：500px） */
+    min-height: 100px;
+    /* または任意の値（例：500px） */
+    border-radius: 10px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+        border: none;
 }
 
 .form-group {
@@ -120,12 +125,35 @@ form {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
+    border: none;
+    border-radius: 5px;
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 button {
     padding: 10px 20px;
-    background-color: white;
-    color: #007BFF;
+    background-color: rgb(0, 17, 255);
+    color: white;
     border: none;
     cursor: pointer;
+    border: none;
+}
+
+.header-container,
+.shop-detail-container,
+.form-container {
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 5px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: black;
 }
