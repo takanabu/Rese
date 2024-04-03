@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    font-weight: bold;
+    /* 全ての文字を太字に */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+
+.header h1 {
+    margin-left: 20px;
+    font-size: 2em;
+    color: blue;
+    margin-top: 0px;
+}
+
+.menu-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px;
+    background-color: blue;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    margin-left: 30px;
+    margin-top: 0px;
+}
+
+.menu-icon div {
+    height: 1px;
+    background-color: white;
+}
+
+.menu-icon div:nth-child(1) {
+    width: 50%;
+}
+
+.menu-icon div:nth-child(2) {
+    width: 100%;
+}
+
+.menu-icon div:nth-child(3) {
+    width: 30%;
+}
+
+.shop-image {
+    width: 50%;
+    height: auto;
+    margin-left: 40px;
+    /* アイコンと同じ余白に */
+}
+
+.shop-name {
+    font-size: 1.5em;
+    /* ショップ名だけ文字を大きく */
+    margin-left: 40px;
+    margin-bottom: 20px;
+        /* 段落の下に隙間を作る */
+        margin-top: 40px;
+}
+
+.shop-region-genre {
+    margin-left: 40px;
+    margin-bottom: 30px;
+        /* 段落の下に隙間を作る */
+        margin-top: 30px;
+}
+
+.shop-overview {
+    margin-left: 40px;
+    line-height: 1.6;
+        /* 行間を広げる */
+        margin-bottom: 20px;
+        /* 段落の下に隙間を作る */
+        margin-top: 20px;
+        width: 50%;
+            /* 画面の半分で折り返す */
+}
+
+.pagination {
+    margin-top: 20px;
+    margin-left: 40px;
+        margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shop-detail {
+    flex: 1;
+    margin-right: 20px;
+}
+
+form {
+    flex: 1;
+    background-color: #007BFF;
+    padding: 20px;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #007BFF;
+    border: none;
+    cursor: pointer;
+}
