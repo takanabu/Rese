@@ -60,4 +60,16 @@ class ShopController extends Controller
 
         return view('index', ['shops' => $shops, 'regions' => $regions, 'genres' => $genres]);
     }
+
+
+
+
+
+public function show($shop_id)
+{
+    $shop = Shop::find($shop_id);
+    $shops = Shop::paginate(1);  // 1ページあたり1項目でページネーションを適用
+    return view('shop_detail', ['shop' => $shop, 'shops' => $shops]);
+}
+
 }

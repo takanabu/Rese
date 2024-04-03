@@ -10,6 +10,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/shops/genre/{genre?}', [ShopController::class, 'genre'])->name('shops.genre');
     Route::get('/shops/search', [ShopController::class, 'search'])->name('shops.search');
     Route::get('/shops/all', [ShopController::class, 'all'])->name('shops.all');
+    Route::get('/detail/{shop_id}', [ShopController::class, 'show']);
+    Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
+
 });
 
 Route::get('/login', function () {
@@ -36,3 +39,4 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/shops/{shop:slug}/favorite', [UserController::class, 'favorite'])->name('favorite');
     Route::delete('/shops/{shop:slug}/favorite', [UserController::class, 'unfavorite'])->name('unfavorite');
 });
+
