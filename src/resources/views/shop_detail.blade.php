@@ -21,9 +21,11 @@
     </div>
     <div class="content">
         <div class="shop-detail-container">
-            <a href="http://localhost/" class="back-button">＜</a>
-            <div class="shop-detail">
+            <div class="shop-header"> <!-- 新しいdiv要素を追加 -->
+                <a href="http://localhost/" class="back-button">＜</a>
                 <h2 class="shop-name">{{ $shop->shop_name }}</h2>
+            </div>
+            <div class="shop-detail">
                 <div class="shop-image" style="position: relative;">
                     <img src="{{ $shop->image_url }}" alt="{{ $shop->shop_name }}">
                 </div>
@@ -35,20 +37,39 @@
             <form action="{{ route('reservation.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="date">日付</label>
-                    <input type="date" id="date" name="date" required>
+                    <label for="date">予約</label>
+                    <input type="date" id="date-input" name="date" required>
                 </div>
                 <div class="form-group">
-                    <label for="time">時間</label>
-                    <input type="time" id="time" name="time" required>
+                    <label for="time"></label>
+                    <input type="time" id="time-input" name="time" required>
                 </div>
                 <div class="form-group">
-                    <label for="number">人数</label>
-                    <input type="number" id="number" name="number" min="1" required>
+                    <label for="number"></label>
+                    <input type="number" id="number-input" name="number" min="1" required>
                 </div>
-                <button type="submit">予約する</button>
             </form>
+            <!-- 水色の四角を追加 -->
+            <div class="reservation-summary">
+                <p><span class="label">Shop</span> <span id="shop-name">{{ $shop->shop_name }}</span></p>
+                <p><span class="label">Date</span> <span id="reservation-date"></span></p>
+                <p><span class="label">Time</span> <span id="reservation-time"></span></p>
+                <p><span class="label">Number</span> <span id="reservation-number"></span></p>
+            </div>
+            <button type="submit">予約する</button>
         </div>
     </div>
+    <!-- JavaScriptを追加 -->
+    <script>
+        document.getElementById('date-input').addEventListener('change', function() {
+            document.getElementById('reservation-date').textContent = this.value;
+        });
+        document.getElementById('time-input').addEventListener('change', function() {
+            document.getElementById('reservation-time').textContent = this.value;
+        });
+        document.getElementById('number-input').addEventListener('change', function() {
+            document.getElementById('reservation-number').textContent = this.value;
+        });
+    </script>
 </body>
 </html>

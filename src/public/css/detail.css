@@ -57,43 +57,43 @@ body {
     width: 80%;
     height: auto;
 
-    
-            margin-left: 40px;
-            /* アイコンと同じ余白に */
-        
+
+    margin-left: 40px;
+    /* アイコンと同じ余白に */
+
 }
 
 .shop-name {
     font-size: 1.5em;
     /* ショップ名だけ文字を大きく */
-    margin-left: 40px;
-    margin-bottom: 20px;
-        /* 段落の下に隙間を作る */
-        margin-top: 40px;
+    margin-right: 500px;
+    margin-bottom: 15px;
+    /* 段落の下に隙間を作る */
+    margin-top: 20px;
 }
 
 .shop-region-genre {
     margin-left: 40px;
     margin-bottom: 30px;
-        /* 段落の下に隙間を作る */
-        margin-top: 30px;
+    /* 段落の下に隙間を作る */
+    margin-top: 30px;
 }
 
 .shop-overview {
     margin-left: 40px;
     line-height: 1.6;
-        /* 行間を広げる */
-        margin-bottom: 20px;
-        /* 段落の下に隙間を作る */
-        margin-top: 20px;
-        width: 80%;
-            /* 画面の半分で折り返す */
+    /* 行間を広げる */
+    margin-bottom: 20px;
+    /* 段落の下に隙間を作る */
+    margin-top: 20px;
+    width: 80%;
+    /* 画面の半分で折り返す */
 }
 
 .pagination {
     margin-top: 20px;
     margin-left: 40px;
-        margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -109,12 +109,12 @@ form {
     min-height: 100px;
     /* または任意の値（例：500px） */
     border-radius: 10px;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-        border: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: -18px;
 }
 
 .form-group label {
@@ -122,12 +122,10 @@ form {
 }
 
 .form-group input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
+    margin-top: 15px;
     border: none;
     border-radius: 5px;
-        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -137,6 +135,18 @@ button {
     border: none;
     cursor: pointer;
     border: none;
+    margin-top: -65px;
+    position: absolute;
+    /* 追加 */
+    bottom: 0;
+    /* 追加 */
+    width: 93.7%;
+    /* 追加 */
+    text-align: center;
+    /* 追加 */
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .header-container,
@@ -156,4 +166,85 @@ button {
     border: 1px solid black;
     text-decoration: none;
     color: black;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    border: none;
+    font-weight: bold;
+    margin-left: 40px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+#date-input {
+    width: 35%;
+    padding-top: 10px;
+    padding-left: 5px;
+    margin-left: 10px;
+}
+
+#time-input,
+#number-input {
+    width: 90%;
+    padding-top: 10px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+.form-container {
+    position: relative;
+    /* 追加 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* その他のスタイルはそのまま */
+    margin-bottom: 30px;
+}
+
+label {
+    margin-left: 15px;
+    /* 上下左右の隙間を10pxに設定 */
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reservation-summary {
+    background-color: rgb(159, 201, 240);
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 75%;
+        padding-top: -105px;
+        border-radius: 5px;
+        padding-left: 20px;
+        margin-top: -420px;
+        margin-left: 30px;
+        margin-bottom: 290px;
+        padding-bottom: 15px;
+}
+
+.reservation-summary p {
+    margin: 10px 0;
+    /* 上下の隙間を10pxに設定 */
+    color: white;
+    font-weight: normal;
+}
+
+.reservation-summary .label {
+    margin-right: 60px;
+    /* ラベルとデータの隙間を10pxに設定 */
+    color: white;
+    font-weight: normal;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+    font-weight: bold;
 }
