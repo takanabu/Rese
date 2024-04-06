@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\ReservationController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [ShopController::class, 'index']);

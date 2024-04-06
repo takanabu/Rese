@@ -220,13 +220,13 @@ label {
     border-radius: 5px;
     margin-bottom: 20px;
     width: 75%;
-        padding-top: -105px;
+        padding-top: -100px;
         border-radius: 5px;
         padding-left: 20px;
-        margin-top: -420px;
+        margin-top: -400px;
         margin-left: 30px;
-        margin-bottom: 290px;
-        padding-bottom: 15px;
+        margin-bottom: 250px;
+        padding-bottom: 21px;
 }
 
 .reservation-summary p {

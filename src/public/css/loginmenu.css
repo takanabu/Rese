@@ -41,6 +41,7 @@ body {
     /* ボタンの背景を青くします */
     border-radius: 10px;
     /* 角を丸くします */
+    border: none;
 }
 
 .line {
