@@ -16,7 +16,7 @@
         @endif
 
         <div class="form-group">
-            <a href="{{ route('login') }}" class="thanks-btn">
+            <a href="{{ route('login') }}" class="Back-btn">
                 {{ __('戻る') }}
             </a>
         </div>

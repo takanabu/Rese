@@ -66,7 +66,7 @@ body {
 .shop-name {
     font-size: 1.5em;
     /* ショップ名だけ文字を大きく */
-    margin-right: 500px;
+    margin-right: 450px;
     margin-bottom: 15px;
     /* 段落の下に隙間を作る */
     margin-top: 20px;
@@ -97,6 +97,8 @@ body {
 }
 
 
+
+
 form {
     flex: 1;
     background-color: rgb(64, 64, 244);
@@ -113,9 +115,7 @@ form {
     border: none;
 }
 
-.form-group {
-    margin-bottom: -18px;
-}
+
 
 .form-group label {
     display: block;
@@ -136,6 +136,7 @@ button {
     cursor: pointer;
     border: none;
     margin-top: -65px;
+    margin-left: -20px;
     position: absolute;
     /* 追加 */
     bottom: 0;
@@ -175,20 +176,9 @@ button {
     margin-top: 30px;
 }
 
-#date-input {
-    width: 35%;
-    padding-top: 10px;
-    padding-left: 5px;
-    margin-left: 10px;
-}
 
-#time-input,
-#number-input {
-    width: 90%;
-    padding-top: 10px;
-    padding-left: 10px;
-    margin-left: 10px;
-}
+
+
 
 .form-container {
     position: relative;
@@ -216,14 +206,10 @@ label {
 
 .reservation-summary {
     background-color: rgb(159, 201, 240);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 20px;
     width: 75%;
-        padding-top: -100px;
         border-radius: 5px;
         padding-left: 20px;
-        margin-top: -400px;
+        margin-top: -380px;
         margin-left: 30px;
         margin-bottom: 250px;
         padding-bottom: 21px;

@@ -21,7 +21,7 @@
     </div>
     <div class="content">
         <div class="shop-detail-container">
-            <div class="shop-header"> <!-- 新しいdiv要素を追加 -->
+            <div class="shop-header">
                 <a href="http://localhost/" class="back-button">＜</a>
                 <h2 class="shop-name">{{ $shop->shop_name }}</h2>
             </div>
@@ -36,30 +36,30 @@
         <div class="form-container">
             <form action="{{ route('reservation.store') }}" method="POST">
                 @csrf
-                <div class="form-group">
+                <input type="hidden" name="user_id" value="{{ Auth::id() }}"> <!-- ログイン中のユーザーID -->
+                <input type="hidden" name="shop_id" value="{{ $shop->id }}"> <!-- 現在のショップID -->
+                <div class="form-group-label">
                     <label for="date">予約</label>
                     <input type="date" id="date-input" name="date" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group-time">
                     <label for="time"></label>
                     <input type="time" id="time-input" name="time" required>
                 </div>
-                <div class="form-group">
-                    <label for="number"></label>
-                    <input type="number" id="number-input" name="number" min="1" required>
+                <div class="form-group-number">
+                    <label for="number_of_people"></label>
+                    <input type="number" id="number_of_people-input" name="number_of_people" min="1" required>
                 </div>
+                <button type="submit">予約する</button>
             </form>
-            <!-- 水色の四角を追加 -->
             <div class="reservation-summary">
                 <p><span class="label">Shop</span> <span id="shop-name">{{ $shop->shop_name }}</span></p>
                 <p><span class="label">Date</span> <span id="reservation-date"></span></p>
                 <p><span class="label">Time</span> <span id="reservation-time"></span></p>
                 <p><span class="label">Number</span> <span id="reservation-number"></span></p>
             </div>
-            <button type="submit">予約する</button>
         </div>
     </div>
-    <!-- JavaScriptを追加 -->
     <script>
         document.getElementById('date-input').addEventListener('change', function() {
             document.getElementById('reservation-date').textContent = this.value;
@@ -67,8 +67,17 @@
         document.getElementById('time-input').addEventListener('change', function() {
             document.getElementById('reservation-time').textContent = this.value;
         });
-        document.getElementById('number-input').addEventListener('change', function() {
+        document.getElementById('number_of_people-input').addEventListener('change', function() {
             document.getElementById('reservation-number').textContent = this.value;
+        });
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            if ({{ Auth::check() ? 'true' : 'false' }}) {
+                // ユーザーがログインしている場合
+                window.location.href = '/logoutmenu';
+            } else {
+                // ユーザーがログアウトしている場合
+                window.location.href = '/loginmenu';
+            }
         });
     </script>
 </body>
