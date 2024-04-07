@@ -19,37 +19,60 @@
             <h1>Rese</h1>
         </div>
     </div>
-    <div class="content">
+    
+
+<div class="content">
         <div class="user-info-container">
-            <h2 class="user-name">{{ $user['name'] }}</h2>
+            <h2 class="user-name">{{ $user['name'] }}さん</h2>
         </div>
-        <div class="reservation-container">
+
+        <div class="reservations">
             <h2>予約状況</h2>
             @foreach ($reservations as $reservation)
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $reservation['shop'] }}</h5>
-                    <p class="card-text">
-                        Date: {{ $reservation['date'] }}<br>
-                        Time: {{ $reservation['time'] }}<br>
-                        Number: {{ $reservation['number'] }}
-                    </p>
+                <div class="reservation-summary">
+                    <p><span class="label">Shop</span> <span id="shop-name">{{ $reservation->shop->shop_name }}</span></p>
+                    <p><span class="label">Date</span> <span id="reservation-date">{{ $reservation->date }}</span></p>
+                    <p><span class="label">Time</span> <span id="reservation-time">{{ $reservation->time }}</span></p>
+                    <p><span class="label">Number</span> <span id="reservation-number">{{ $reservation->number_of_people }}</span></p>
                 </div>
-            </div>
             @endforeach
         </div>
-        <div class="favorite-container">
-            <h2>お気に入り店舗</h2>
-            @foreach ($favorites as $favorite)
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{ $favorite }}</h5>
-                    <a href="#" class="btn btn-primary">詳細を見る</a>
-                </div>
-            </div>
-            @endforeach
+
+        <div class="favorites">
+            <h2>お気に入り登録したお店</h2>
+          
         </div>
     </div>
+    <div class="container">
+    <div class="row justify-content-center">
+        @foreach ($shops as $shop)
+        <div class="col-md-3 mb-4"> 
+            <div class="card shadow-sm">
+                <img src="{{ $shop->image_url }}" alt="{{ $shop->shop_name }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                <div class="card-body">
+                    <p class="card-text"><strong>{{ $shop->shop_name }}</strong></p> 
+                    <small class="text-muted">#{{ $shop->region }} #{{ $shop->genre }}</small> 
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='/detail/{{ $shop->id }}'">詳しく見る</button>
+                        </div>
+                        @if (Auth::user()->favorites()->where('shop_id', $shop->id)->exists())
+                            <form method="POST" action="{{ route('unfavorite', ['shop' => $shop->id]) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"><img src="/images/WhiteHeart-icon.png" alt="White Heart Icon" class="heart-icon"></button>
+                            </form>
+                        @else
+                            <form method="POST" action="{{ route('favorite', ['shop' => $shop->id]) }}">
+                                @csrf
+                                <button type="submit"><img src="/images/RedHeart-icon.png" alt="Red Heart Icon" class="heart-icon"></button>
+                            </form>
+                        @endif
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
     <script>
         document.querySelector('.menu-icon').addEventListener('click', function() {
             if ({{ Auth::check() ? 'true' : 'false' }}) {

@@ -9,15 +9,11 @@ class Favorite extends Model
 {
     use HasFactory;
 
- public function user() {
-    return $this->belongsTo(User::class);
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function shop() {  // ここを修正しました
+        return $this->belongsTo(Shop::class);  // ここを修正しました
+    }
 }
-public function articles() {
-    return $this->belongsTo(Article::class);
-}
-
-
-
-}
-
-
