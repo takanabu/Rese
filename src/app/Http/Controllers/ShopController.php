@@ -64,11 +64,31 @@ class ShopController extends Controller
 
 
 
-
-public function show($shop_id)
+public function search(Request $request)
 {
-    $shop = Shop::find($shop_id);
-    return view('shop_detail', ['shop' => $shop]);
+    $keyword = $request->input('keyword');
+
+    $shops = Shop::where('shop_name', 'LIKE', "%{$keyword}%")
+        ->orWhere('region', 'LIKE', "%{$keyword}%")
+        ->orWhere('genre', 'LIKE', "%{$keyword}%")
+        ->get();
+
+    $regions = Shop::select('region')->distinct()->get();
+    $genres = Shop::select('genre')->distinct()->get();
+
+    return view('index', ['shops' => $shops, 'regions' => $regions, 'genres' => $genres]);
+}
+
+public function show($id)
+{
+    $shop = Shop::find($id);
+
+    if ($shop) {
+        return view('shop_detail', ['shop' => $shop]);
+    } else {
+        // Shop not found, handle accordingly
+        return redirect()->route('shops.index');
+    }
 }
 
 }

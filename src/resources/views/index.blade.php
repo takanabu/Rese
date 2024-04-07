@@ -73,3 +73,14 @@
             </div>
         </div>
         @endforeach
+        <script>
+        document.querySelector('.menu-icon').addEventListener('click', function() {
+            if ({{ Auth::check() ? 'true' : 'false' }}) {
+                // ユーザーがログインしている場合
+                window.location.href = '/logoutmenu';
+            } else {
+                // ユーザーがログアウトしている場合
+                window.location.href = '/loginmenu';
+            }
+        });
+    </script>

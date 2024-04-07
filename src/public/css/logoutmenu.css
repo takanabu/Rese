@@ -1,0 +1,66 @@
+body {
+    background-color: white;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    background-color: white;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.menu {
+    text-align: center;
+    padding-top: 70px;
+}
+
+.menu a {
+    color: blue;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+    line-height: 2;
+    font-size: 30px;
+}
+
+.first-link {
+    padding-top: 80px;
+}
+
+.close-btn {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    /* ボタンの背景を青くします */
+    border-radius: 10px;
+    /* 角を丸くします */
+    border: none;
+}
+
+.line {
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    /* "×"自体を小さくします */
+    background-color: white;
+    /* "×"の色を白くします */
+    left: 10%;
+    /* "×"を中央に配置します */
+    top: 50%;
+    /* "×"を中央に配置します */
+}
+
+.line1 {
+    transform: rotate(45deg);
+}
+
+.line2 {
+    transform: rotate(-45deg);
+}

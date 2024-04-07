@@ -16,7 +16,9 @@ class Reservation extends Model
     protected $fillable = [
         'date',
         'time',
-        'number',
+        'number_of_people', // ここを修正しました
+        'user_id', // user_idを追加しました
+        'shop_id', // shop_idを追加しました
         // 必要に応じて他のフィールドを追加します
     ];
 
