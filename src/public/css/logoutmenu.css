@@ -64,3 +64,17 @@ body {
 .line2 {
     transform: rotate(-45deg);
 }
+
+.logout-button {
+    color: blue;
+    background: none;
+    border: none;
+    padding-left: 595px;
+    cursor: pointer;
+    outline: inherit;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
+        line-height: 2;
+        font-size: 30px;
+}
