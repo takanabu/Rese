@@ -19,7 +19,7 @@
             <a href="/" class="first-link">Home</a> 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <button type="submit">Logout</button>
+                <button type="submit"class="logout-button">Logout</button>
             </form>
             <a href="/mypage">Mypage</a>
         </div>
