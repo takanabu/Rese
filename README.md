@@ -36,18 +36,19 @@ Rese（リーズ）
 - docker-compose
 
 ## テーブル設計
-<img width="570" alt="userテーブル" src="https://github.com/takanabu/Atte/assets/146699650/06288416-26cb-470c-807a-d667de9e6073">
+<img width="811" alt="users" src="https://github.com/takanabu/Rese/assets/146699650/25e6ac14-e312-4d08-9336-ecb4e7c01a80">
 
-<img width="584" alt="attendanceテーブル" src="https://github.com/takanabu/Atte/assets/146699650/6c816a84-3897-4171-9d6d-6e5c481ec085">
+<img width="822" alt="shop" src="https://github.com/takanabu/Rese/assets/146699650/5100c808-33de-4a38-a7b3-ad3a1cb1bdde">
 
-<img width="571" alt="breakテーブル" src="https://github.com/takanabu/Atte/assets/146699650/674ab712-fe7d-4917-b346-01b489ae817b">
+<img width="813" alt="reservations" src="https://github.com/takanabu/Rese/assets/146699650/3b441813-0a9f-4325-803e-4012408cdcaf">
 
-
+<img width="809" alt="favorites" src="https://github.com/takanabu/Rese/assets/146699650/dc109713-532d-4e9e-8166-5cda33a58188">
 
 
 
 ## ER図
-![er2-4](https://github.com/takanabu/Atte/assets/146699650/a96217e9-dd2b-4ab5-8014-4d9011918579)
+![Rese](https://github.com/takanabu/Rese/assets/146699650/5dda52d3-dd72-4d2d-a92f-0089d91aa95e)
+
 
 
 ## 環境構築
