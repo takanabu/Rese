@@ -15,7 +15,7 @@ class MypageController extends Controller
         $user = Auth::user();
         $reservations = Reservation::where('user_id', $user->id)->get();
         $favorites = Favorite::where('user_id', $user->id)->get();
-        $shops = Shop::favoritedByUser(Auth::id())->get();
+        $shops = Shop::whereIn('id', $user->favorites()->pluck('shop_id'))->get();
 
         return view('mypage', [
             'user' => $user,
