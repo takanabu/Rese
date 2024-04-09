@@ -13,7 +13,7 @@ class Favorite extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function shop() {  // ここを修正しました
-        return $this->belongsTo(Shop::class);  // ここを修正しました
+    public function shop() {
+        return $this->belongsTo(Shop::class);
     }
 }

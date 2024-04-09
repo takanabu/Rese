@@ -20,7 +20,6 @@
         </div>
     </div>
     
-
 <div class="content">
         <div class="user-info-container">
             <h2 class="user-name">{{ $user['name'] }}さん</h2>
@@ -37,52 +36,51 @@
                 </div>
             @endforeach
         </div>
-
         <div class="favorites">
-            <h2>お気に入り登録したお店</h2>
-          
-        </div>
-    </div>
-    <div class="container">
-    <div class="row justify-content-center">
-        @foreach ($shops as $shop)
-        <div class="col-md-3 mb-4"> 
-            <div class="card shadow-sm">
-                <img src="{{ $shop->image_url }}" alt="{{ $shop->shop_name }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
-                <div class="card-body">
-                    <p class="card-text"><strong>{{ $shop->shop_name }}</strong></p> 
-                    <small class="text-muted">#{{ $shop->region }} #{{ $shop->genre }}</small> 
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='/detail/{{ $shop->id }}'">詳しく見る</button>
+            <h2>お気に入り店舗</h2>
+            <div class="row justify-content-center">
+                @foreach ($shops as $shop)
+                <div class="col-md-3 mb-4"> 
+                    <div class="card shadow-sm">
+                        <img src="{{ $shop->image_url }}" alt="{{ $shop->shop_name }}" class="bd-placeholder-img card-img-top" width="100%" height="225">
+                        <div class="card-body">
+                            <p class="card-text"><strong>{{ $shop->shop_name }}</strong></p> 
+                            <small class="text-muted">#{{ $shop->region }} #{{ $shop->genre }}</small> 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='/detail/{{ $shop->id }}'">詳しく見る</button>
+                                </div>
+                                @if (Auth::user()->favorites()->where('shop_id', $shop->id)->exists())
+                                    <form method="POST" action="{{ route('unfavorite', ['shop' => $shop->id]) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit"><img src="/images/WhiteHeart-icon.png" alt="White Heart Icon" class="heart-icon"></button>
+                                    </form>
+                                @else
+                                    <form method="POST" action="{{ route('favorite', ['shop' => $shop->id]) }}">
+                                        @csrf
+                                        <button type="submit"><img src="/images/RedHeart-icon.png" alt="Red Heart Icon" class="heart-icon"></button>
+                                    </form>
+                                @endif
+                            </div>
                         </div>
-                        @if (Auth::user()->favorites()->where('shop_id', $shop->id)->exists())
-                            <form method="POST" action="{{ route('unfavorite', ['shop' => $shop->id]) }}">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"><img src="/images/WhiteHeart-icon.png" alt="White Heart Icon" class="heart-icon"></button>
-                            </form>
-                        @else
-                            <form method="POST" action="{{ route('favorite', ['shop' => $shop->id]) }}">
-                                @csrf
-                                <button type="submit"><img src="/images/RedHeart-icon.png" alt="Red Heart Icon" class="heart-icon"></button>
-                            </form>
-                        @endif
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
-        @endforeach
+    </div>
+</body>
+</html>
     <script>
         document.querySelector('.menu-icon').addEventListener('click', function() {
             if ({{ Auth::check() ? 'true' : 'false' }}) {
-                // ユーザーがログインしている場合
                 window.location.href = '/logoutmenu';
             } else {
-                // ユーザーがログアウトしている場合
                 window.location.href = '/loginmenu';
             }
         });
     </script>
 </body>
 </html>
+            
