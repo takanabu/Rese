@@ -15,7 +15,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/shops/all', [ShopController::class, 'all'])->name('shops.all');
     Route::get('/detail/{shop_id}', [ShopController::class, 'show']);
     Route::post('/reservation', [ReservationController::class, 'store'])->name('reservation.store');
-    Route::get('/reservation/success', [ReservationController::class, 'success'])->name('reservation.success'); // 予約完了ページへのルートを追加
+    Route::get('/reservation/success', [ReservationController::class, 'success'])->name('reservation.success');
     Route::get('/mypage', [MypageController::class, 'index'])->name('mypage');
 });
 

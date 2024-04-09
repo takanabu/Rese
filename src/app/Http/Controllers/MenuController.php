@@ -10,10 +10,8 @@ class MenuController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            // ユーザーがログインしている場合
             return view('logoutmenu');
         } else {
-            // ユーザーがログアウトしている場合
             return view('loginmenu');
         }
     }

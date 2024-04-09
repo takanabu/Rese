@@ -19,8 +19,13 @@ class Shop extends Model
         'image_url',
     ];
 
-
     public function favorites() {
-    return $this->hasMany(Favorite::class);
-}
+        return $this->hasMany(Favorite::class);
+    }
+
+    public function scopeFavoritedByUser($query, $userId) {
+        return $query->whereHas('favorites', function ($query) use ($userId) {
+            $query->where('user_id', $userId);
+        });
+    }
 }

@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
     font-weight: bold;
-    /* 全ての文字を太字に */
 }
 
 .header {
@@ -51,9 +50,6 @@ body {
     width: 30%;
 }
 
-
-
-
 .starter-template {
     padding: 3rem 1.5rem;
     text-align: center;
@@ -90,9 +86,6 @@ body {
     flex-wrap: wrap;
 }
 
-.col-md-3 {
-    width: 25%;
-}
 
 .container {
     margin-left: auto;
@@ -137,7 +130,6 @@ button {
     left: 10px;
 }
 
-
 .search-container-index {
     display: flex;
     justify-content: flex-start;
@@ -156,4 +148,50 @@ button {
 .form-select,
 .form-control {
     border: none;
+}
+
+.reservation-summary {
+    background-color: rgb(159, 201, 240);
+    width: 50%;
+    border-radius: 5px;
+    padding-left: 30px;
+    margin-top: 50px;
+    margin-left: 5px;
+    margin-bottom: 250px;
+    padding-bottom: 21px;
+    padding-top: 20px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservations {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.reservations,
+.favorites {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+}
+
+.reservations {
+    margin-right: 2%;
+}
+
+.favorites {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.col-md-3 {
+    flex: 0 0 calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    margin-bottom: 20px;
+    width: 25%;
 }

@@ -38,9 +38,7 @@ body {
     width: 50px;
     height: 50px;
     background-color: blue;
-    /* ボタンの背景を青くします */
     border-radius: 10px;
-    /* 角を丸くします */
     border: none;
 }
 
@@ -48,13 +46,9 @@ body {
     position: absolute;
     width: 80%;
     height: 1px;
-    /* "×"自体を小さくします */
     background-color: white;
-    /* "×"の色を白くします */
     left: 10%;
-    /* "×"を中央に配置します */
     top: 50%;
-    /* "×"を中央に配置します */
 }
 
 .line1 {

@@ -9,26 +9,21 @@ class Reservation extends Model
 {
     use HasFactory;
 
-    // 予約に関連するテーブル名を指定します
     protected $table = 'reservations';
 
-    // モデルのJSON形式のデータに含める属性
     protected $fillable = [
         'date',
         'time',
-        'number_of_people', // ここを修正しました
-        'user_id', // user_idを追加しました
-        'shop_id', // shop_idを追加しました
-        // 必要に応じて他のフィールドを追加します
+        'number_of_people',
+        'user_id',
+        'shop_id',
     ];
 
-    // この予約がどのユーザーに属しているかを定義します
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    // この予約がどのショップに属しているかを定義します
     public function shop()
     {
         return $this->belongsTo(Shop::class);

@@ -36,8 +36,8 @@
         <div class="form-container">
             <form action="{{ route('reservation.store') }}" method="POST">
                 @csrf
-                <input type="hidden" name="user_id" value="{{ Auth::id() }}"> <!-- ログイン中のユーザーID -->
-                <input type="hidden" name="shop_id" value="{{ $shop->id }}"> <!-- 現在のショップID -->
+                <input type="hidden" name="user_id" value="{{ Auth::id() }}"> 
+                <input type="hidden" name="shop_id" value="{{ $shop->id }}"> 
                 <div class="form-group-label">
                     <label for="date">予約</label>
                     <input type="date" id="date-input" name="date" required>
@@ -72,10 +72,8 @@
         });
         document.querySelector('.menu-icon').addEventListener('click', function() {
             if ({{ Auth::check() ? 'true' : 'false' }}) {
-                // ユーザーがログインしている場合
                 window.location.href = '/logoutmenu';
             } else {
-                // ユーザーがログアウトしている場合
                 window.location.href = '/loginmenu';
             }
         });
